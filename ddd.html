@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>❤️ 给你的专属代码 ❤️</title>
+    <style>
+        body {
+            background: #ffe6f2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Microsoft YaHei', sans-serif;
+        }
+
+        .heart {
+            position: relative;
+            width: 100px;
+            height: 90px;
+            animation: heartbeat 1.2s infinite;
+            margin: 20px;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 80px;
+            background: #ff3f6c;
+            border-radius: 50px 50px 0 0;
+        }
+
+        .heart::before {
+            left: 50px;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+
+        .heart::after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+
+        .message {
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+            margin: 20px;
+            color: #ff3f6c;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            15% { transform: scale(1.3); }
+            30% { transform: scale(1); }
+            45% { transform: scale(1.15); }
+            60% { transform: scale(1); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        button {
+            padding: 12px 30px;
+            font-size: 18px;
+            background: #ff3f6c;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: transform 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="heart"></div>
+    
+    <div class="message">
+        <h1>💌 给特别的你 💌</h1>
+        <p>自从遇见你</p >
+        <p>我的世界便有了新的定义</p >
+        <p>你是我最完美的算法</p >
+        <p>我愿做你永远的依赖项</p >
+        <p>❤️ 和我一起编写未来吗？ ❤️</p >
+    </div>
+
+    <button onclick="showAnswer()">点击查看答案</button>
+
+    <script>
+        function showAnswer() {
+            const messages = [
+                "YES! 💖",
+                "当然愿意！🥰",
+                "已加入人生项目 🚀",
+                "心跳同步成功 💞"
+            ];
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            
+            alert(randomMessage + "\n\n代码持续运行中...");
+            document.body.style.background = "#ffd1dc";
+        }
+    </script>
+</body>
+</html>
